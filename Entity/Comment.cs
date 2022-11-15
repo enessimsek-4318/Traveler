@@ -1,6 +1,6 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿
 
-namespace Traveler.Models
+namespace Traveler.Entity
 {
     public class Comment
     {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Traveler.Models;
+using Traveler.Entity;
 
 namespace Traveler.Controllers
 {
