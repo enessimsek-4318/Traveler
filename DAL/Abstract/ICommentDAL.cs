@@ -7,8 +7,7 @@ using Traveler.Entity;
 
 namespace DAL.Abstract
 {
-    public interface IUserDAL:IRepository<User>
+    public interface ICommentDAL:IRepository<Comment>
     {
-
     }
 }

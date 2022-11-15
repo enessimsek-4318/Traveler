@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Traveler.Entity;
 
-namespace DAL.Abstract
+namespace BLL.Concrete
 {
-    public interface IUserDAL:IRepository<User>
+    public class UserManager
     {
-
     }
 }
