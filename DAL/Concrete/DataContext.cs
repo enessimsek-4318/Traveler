@@ -6,6 +6,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using Traveler.Entity;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DAL.Concrete
 {
@@ -13,7 +14,7 @@ namespace DAL.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-UVMSNSF;Initial Catalog=Traveller;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-UVMSNSF;Initial Catalog=Traveler;Integrated Security=True");
         }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<User> Users{ get; set; }
@@ -22,7 +23,6 @@ namespace DAL.Concrete
         public DbSet<Like> Likes { get; set; }
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
 
     }
 }

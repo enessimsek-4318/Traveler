@@ -1,8 +1,19 @@
+using BLL.Abstract;
+using BLL.Concrete;
+using DAL.Abstract;
+using DAL.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
+builder.Services.AddScoped<IAdminDAL, AdminDAL>();
+builder.Services.AddScoped<IAdminService, AdminManager>();
+builder.Services.AddScoped<IPostDAL, PostDAL>();
+builder.Services.AddScoped<IPostService, PostManager>();
+builder.Services.AddScoped<IUserDAL, UserDAL>();
+builder.Services.AddScoped<IUserService, UserManager>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,12 +29,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthorization(); 
 
 app.MapRazorPages();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
 });
-
+SeedDatabase.Seed();
 app.Run();

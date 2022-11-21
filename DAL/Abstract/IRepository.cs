@@ -9,9 +9,9 @@ namespace DAL.Abstract
 {
     public interface IRepository<T>
     {   
-        public T GetById(int id);
-        public T Find(int id);
-        public List<T> GetAll(Expression<Func<T,bool>>filter=null);
+        T GetById(int id);
+        T Find(Expression<Func<T,bool>>filter);
+        List<T> GetAll(Expression<Func<T,bool>>filter=null);
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);
