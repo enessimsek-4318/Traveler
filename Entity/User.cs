@@ -12,6 +12,5 @@
         public List<Like> likes { get; set; }
         public List<Comment> comments { get; set; }
 
-        //user photo can be added this situation is optional. it will be decided.
     }
 }

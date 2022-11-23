@@ -6,12 +6,12 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using Traveler.Entity;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace DAL.Concrete
 {
     public class DataContext : DbContext
     {
+ 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-UVMSNSF;Initial Catalog=Traveler;Integrated Security=True");

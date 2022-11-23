@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,15 +10,23 @@ namespace DAL.Concrete
 {
     public static class SeedDatabase
     {
-        private static Admin admin = new Admin
-        {
-            adminName="Enes",
-            adminPassword="123"
-        };
-       public static void Seed()
+
+        public static void Seed()
         {
             var context =new DataContext();
-            context.AddRange(admin);
+            if (context.Database.GetPendingMigrations().Count()==0)
+            {
+                if (context.Admins.Count()==0)
+                {
+                    context.Admins.AddRange(admin);
+                }
+                context.SaveChanges();
+            }
         }
+        private static Admin admin = new Admin()
+        {
+            adminName = "Enes",
+            adminPassword = "1"
+        };
     }
 }
