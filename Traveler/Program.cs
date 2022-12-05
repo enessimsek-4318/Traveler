@@ -2,6 +2,7 @@ using BLL.Abstract;
 using BLL.Concrete;
 using DAL.Abstract;
 using DAL.Concrete;
+using Traveler.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.CustomStaticFiles();
 
 app.UseRouting();
 
