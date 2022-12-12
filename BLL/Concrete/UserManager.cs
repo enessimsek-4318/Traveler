@@ -1,4 +1,5 @@
 ﻿using BLL.Abstract;
+using DAL.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,13 @@ namespace BLL.Concrete
 {
     public class UserManager : IUserService
     {
+        private IUserDAL _userDal;
+
+        public UserManager(IUserDAL userDal) 
+        {
+            _userDal = userDal;
+        }
+
         public void Create(User entity)
         {
             throw new NotImplementedException();
@@ -23,7 +31,7 @@ namespace BLL.Concrete
 
         public User Find(Expression<Func<User, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _userDal.Find(filter);
         }
 
         public List<User> GetAll(Expression<Func<User, bool>> filter = null)
@@ -33,7 +41,7 @@ namespace BLL.Concrete
 
         public User GetById(int id)
         {
-            throw new NotImplementedException();
+            return _userDal.GetById(id);
         }
 
         public void Update(User entity)

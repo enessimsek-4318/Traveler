@@ -36,7 +36,7 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+    endpoints.MapControllerRoute("default", "{controller=Login}/{action=LoginCheck}");
 });
 SeedDatabase.Seed();
 app.Run();

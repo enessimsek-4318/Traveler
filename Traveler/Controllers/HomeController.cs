@@ -15,10 +15,11 @@ namespace Traveler.Controllers
 
         public IActionResult Index()
         {
-            return View(new PostListModel()
-            {
-                posts=_postService.GetAll()
-            });
+            //return View(new PostListModel()
+            //{
+            //    posts=_postService.GetAll()
+            //});,
+            return View();
         }
     }
 }
